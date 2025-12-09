@@ -64,6 +64,7 @@ test-server.js
 catalyst-env.json
 local-env.json
 
-# Optional - uncomment if needed
-# .catalyst/
-# dist/
+Optional - uncomment if needed
+.catalyst/
+dist/
+./build/
