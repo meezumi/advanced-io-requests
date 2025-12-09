@@ -7,17 +7,17 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
     background: white;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 40px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
@@ -26,51 +26,95 @@ h1 {
     color: #333;
     margin-bottom: 30px;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 h2 {
     color: #667eea;
     margin-bottom: 20px;
-    font-size: 1.5em;
-    border-bottom: 2px solid #667eea;
-    padding-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: 600;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 12px;
+    letter-spacing: 0.3px;
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    min-height: 600px;
+}
+
+.forms-section {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+
+.response-section {
+    flex: 0 0 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.response-section h2 {
+    margin-top: 0;
 }
 
 .section {
-    margin-bottom: 40px;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    border-left: 4px solid #667eea;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f0f1ff 100%);
+    border-radius: 12px;
+    border-left: 5px solid #667eea;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.08);
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.12);
+    transform: translateY(-2px);
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: #333;
     font-weight: 600;
     font-size: 0.95em;
+    letter-spacing: 0.3px;
 }
 
 input[type="text"],
 select,
 textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: 'Courier New', monospace;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Fira Code', 'Courier New', monospace;
     font-size: 0.9em;
+    transition: all 0.3s ease;
+    background: white;
 }
 
 textarea {
     min-height: 100px;
     resize: vertical;
+    font-size: 0.85em;
 }
 
 input[type="text"]:focus,
@@ -78,48 +122,110 @@ select:focus,
 textarea:focus {
     outline: none;
     border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+    background: #f9f9ff;
 }
 
 button {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
-    padding: 12px 30px;
-    border-radius: 5px;
+    padding: 14px 30px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1em;
-    font-weight: 600;
+    font-weight: 700;
     transition: all 0.3s ease;
     width: 100%;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 button:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
 }
 
 .response-box {
-    background: #1e1e1e;
+    background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
     color: #00ff00;
-    padding: 20px;
-    border-radius: 5px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9em;
-    max-height: 400px;
+    padding: 25px;
+    border-radius: 8px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.85em;
+    max-height: 550px;
     overflow-y: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
-    line-height: 1.5;
+    line-height: 1.6;
+    border: 2px solid #667eea;
+    flex: 1;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .response-box:empty::before {
     content: "Response will appear here...";
     color: #666;
+    opacity: 0.5;
+}
+
+/* Scrollbar styling for response box */
+.response-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.response-box::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 5px;
+}
+
+.response-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 5px;
+}
+
+.response-box::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Scrollbar styling for forms section */
+.forms-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.forms-section::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+.forms-section::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 5px;
+    opacity: 0.5;
+}
+
+.forms-section::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+    opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        gap: 20px;
+        min-height: auto;
+    }
+
+    .response-section {
+        flex: 1;
+        min-height: 400px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -128,10 +234,23 @@ button:active {
     }
 
     h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     h2 {
         font-size: 1.2em;
+    }
+
+    .forms-section {
+        padding-right: 0;
+    }
+
+    .section {
+        padding: 18px;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 0.95em;
     }
 }

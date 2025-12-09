@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Catalyst Advanced IO Tester</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 
@@ -13,58 +16,62 @@
     <div class="container">
         <h1>Catalyst Advanced IO API Tester</h1>
         
-        <div class="section">
-            <h2>GET Requests</h2>
-            <div class="form-group">
-                <label>Endpoint:</label>
-                <select id="getEndpoint">
-                    <option value="/">Root (/)</option>
-                    <option value="/data">/data</option>
-                    <option value="/users">/users</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Query Parameters:</label>
-                <input type="text" id="getParams" placeholder="e.g., id=123&name=John">
-            </div>
-            <button onclick="testGET()">Send GET Request</button>
-        </div>
+        <div class="main-content">
+            <div class="forms-section">
+                <div class="section">
+                    <h2>GET Requests</h2>
+                    <div class="form-group">
+                        <label>Endpoint:</label>
+                        <select id="getEndpoint">
+                            <option value="/">Root (/)</option>
+                            <option value="/data">/data</option>
+                            <option value="/users">/users</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Query Parameters:</label>
+                        <input type="text" id="getParams" placeholder="e.g., id=123&name=John">
+                    </div>
+                    <button onclick="testGET()">Send GET Request</button>
+                </div>
 
-        <div class="section">
-            <h2>POST Requests</h2>
-            <div class="form-group">
-                <label>Endpoint:</label>
-                <select id="postEndpoint">
-                    <option value="/users">/users</option>
-                    <option value="/data">/data</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>JSON Body:</label>
-                <textarea id="postBody" placeholder='{"name":"John","email":"john@example.com"}'></textarea>
-            </div>
-            <button onclick="testPOST()">Send POST Request</button>
-        </div>
+                <div class="section">
+                    <h2>POST Requests</h2>
+                    <div class="form-group">
+                        <label>Endpoint:</label>
+                        <select id="postEndpoint">
+                            <option value="/users">/users</option>
+                            <option value="/data">/data</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>JSON Body:</label>
+                        <textarea id="postBody" placeholder='{"name":"John","email":"john@example.com"}'></textarea>
+                    </div>
+                    <button onclick="testPOST()">Send POST Request</button>
+                </div>
 
-        <div class="section">
-            <h2>PUT Requests</h2>
-            <div class="form-group">
-                <label>Endpoint:</label>
-                <select id="putEndpoint">
-                    <option value="/users">/users</option>
-                    <option value="/data">/data</option>
-                </select>
+                <div class="section">
+                    <h2>PUT Requests</h2>
+                    <div class="form-group">
+                        <label>Endpoint:</label>
+                        <select id="putEndpoint">
+                            <option value="/users">/users</option>
+                            <option value="/data">/data</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>JSON Body:</label>
+                        <textarea id="putBody" placeholder='{"id":1,"name":"Updated Name"}'></textarea>
+                    </div>
+                    <button onclick="testPUT()">Send PUT Request</button>
+                </div>
             </div>
-            <div class="form-group">
-                <label>JSON Body:</label>
-                <textarea id="putBody" placeholder='{"id":1,"name":"Updated Name"}'></textarea>
-            </div>
-            <button onclick="testPUT()">Send PUT Request</button>
-        </div>
 
-        <div class="section">
-            <h2>Response</h2>
-            <div id="response" class="response-box"></div>
+            <div class="response-section">
+                <h2>Response</h2>
+                <div id="response" class="response-box"></div>
+            </div>
         </div>
     </div>
 

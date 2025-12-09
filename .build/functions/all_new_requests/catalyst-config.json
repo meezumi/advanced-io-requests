@@ -1,0 +1,11 @@
+{
+	"deployment": {
+		"name": "all_new_requests",
+		"stack": "node14",
+		"type": "advancedio",
+		"env_variables": {}
+	},
+	"execution": {
+		"main": "index.js"
+	}
+}

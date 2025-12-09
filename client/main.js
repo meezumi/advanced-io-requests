@@ -22,6 +22,24 @@ function displayResponse(data, status = 'success') {
     
     responseBox.textContent = `[${timestamp}] ${status.toUpperCase()}\n\n${formattedData}`;
     responseBox.style.color = status === 'error' ? '#ff6b6b' : '#00ff00';
+    
+    // Auto-scroll to response section on desktop, smooth scroll on mobile
+    scrollToResponse();
+}
+
+function scrollToResponse() {
+    const responseSection = document.querySelector('.response-section');
+    if (responseSection) {
+        // On mobile/tablet, scroll the response into view
+        if (window.innerWidth <= 1024) {
+            responseSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            // On desktop, focus the response box
+            const responseBox = document.getElementById('response');
+            responseBox.scrollTop = 0;
+            responseBox.focus();
+        }
+    }
 }
 
 async function testGET() {
