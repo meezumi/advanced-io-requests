@@ -1,0 +1,12 @@
+{
+  "functions": {
+    "targets": [
+      "all_new_requests"
+    ],
+    "ignore": [],
+    "source": "functions"
+  },
+  "client": {
+    "source": "client"
+  }
+}

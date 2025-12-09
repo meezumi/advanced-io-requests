@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Catalyst Advanced IO Tester</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Catalyst Advanced IO API Tester</h1>
+        
+        <div class="section">
+            <h2>GET Requests</h2>
+            <div class="form-group">
+                <label>Endpoint:</label>
+                <select id="getEndpoint">
+                    <option value="/">Root (/)</option>
+                    <option value="/data">/data</option>
+                    <option value="/users">/users</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Query Parameters:</label>
+                <input type="text" id="getParams" placeholder="e.g., id=123&name=John">
+            </div>
+            <button onclick="testGET()">Send GET Request</button>
+        </div>
+
+        <div class="section">
+            <h2>POST Requests</h2>
+            <div class="form-group">
+                <label>Endpoint:</label>
+                <select id="postEndpoint">
+                    <option value="/users">/users</option>
+                    <option value="/data">/data</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>JSON Body:</label>
+                <textarea id="postBody" placeholder='{"name":"John","email":"john@example.com"}'></textarea>
+            </div>
+            <button onclick="testPOST()">Send POST Request</button>
+        </div>
+
+        <div class="section">
+            <h2>PUT Requests</h2>
+            <div class="form-group">
+                <label>Endpoint:</label>
+                <select id="putEndpoint">
+                    <option value="/users">/users</option>
+                    <option value="/data">/data</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>JSON Body:</label>
+                <textarea id="putBody" placeholder='{"id":1,"name":"Updated Name"}'></textarea>
+            </div>
+            <button onclick="testPUT()">Send PUT Request</button>
+        </div>
+
+        <div class="section">
+            <h2>Response</h2>
+            <div id="response" class="response-box"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

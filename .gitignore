@@ -1,0 +1,69 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.DS_Store
+.sublime-project
+.sublime-workspace
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Build artifacts and dist
+dist/
+build/
+out/
+.next/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# OS specific
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+.cache/
+
+# Server logs
+/tmp/
+*.pid
+*.seed
+*.pid.lock
+
+# Local testing files
+test-server.js
+.test-results
+
+# Catalyst specific
+.zcatalyst/
+catalyst-env.json
+local-env.json
+
+# Optional - uncomment if needed
+# .catalyst/
+# dist/
