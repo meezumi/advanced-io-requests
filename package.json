@@ -1,0 +1,24 @@
+{
+  "name": "advanced-io-requests",
+  "version": "1.0.0",
+  "description": "Catalyst Advanced IO Requests Application with GET, POST, PUT methods",
+  "main": "functions/all_new_requests/index.js",
+  "author": "user1@demo1.itotcloud.in",
+  "license": "ISC",
+  "scripts": {
+    "start": "catalyst serve",
+    "serve": "catalyst serve",
+    "dev": "catalyst serve",
+    "build": "catalyst build",
+    "deploy": "catalyst deploy"
+  },
+  "keywords": [
+    "catalyst",
+    "advancedio",
+    "http-methods",
+    "nodejs"
+  ],
+  "dependencies": {
+    "zcatalyst-sdk-node": "latest"
+  }
+}

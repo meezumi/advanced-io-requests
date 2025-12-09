@@ -1,0 +1,14 @@
+# Files to ignore during Catalyst build and deployment
+test-server.js
+test.md
+node_modules/
+.git/
+.gitignore
+.DS_Store
+.vscode/
+.idea/
+*.log
+coverage/
+dist/
+build/
+tmp/

@@ -1,6 +1,9 @@
 // YOUR JAVASCRIPT CODE FOR INDEX.HTML GOES HERE
 
-const API_BASE_URL = window.location.origin;
+// Backend API URL - When using catalyst serve, functions are served at /server/{function-name}/
+// For local development: http://localhost:3000/server/all_new_requests/
+// For production: https://your-domain.com/server/all_new_requests/
+const API_BASE_URL = 'http://localhost:3000/server/all_new_requests';
 
 function displayResponse(data, status = 'success') {
     const responseBox = document.getElementById('response');
@@ -38,12 +41,15 @@ async function testGET() {
         displayResponse({
             status: response.status,
             statusText: response.statusText,
+            url: url,
             data: data
         });
     } catch (error) {
         displayResponse({
             error: error.message,
-            url: url
+            url: url,
+            backendUrl: API_BASE_URL,
+            note: 'Make sure the backend server is running on ' + API_BASE_URL
         }, 'error');
     }
 }
@@ -54,8 +60,9 @@ async function testPOST() {
     
     try {
         const body = bodyText ? JSON.parse(bodyText) : {};
+        const url = `${API_BASE_URL}${endpoint}`;
         
-        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+        const response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -67,12 +74,15 @@ async function testPOST() {
         displayResponse({
             status: response.status,
             statusText: response.statusText,
+            url: url,
             data: data
         });
     } catch (error) {
         displayResponse({
             error: error.message,
-            details: 'Invalid JSON in body or request failed'
+            details: 'Invalid JSON in body or request failed',
+            backendUrl: API_BASE_URL,
+            note: 'Make sure the backend server is running on ' + API_BASE_URL
         }, 'error');
     }
 }
@@ -83,8 +93,9 @@ async function testPUT() {
     
     try {
         const body = bodyText ? JSON.parse(bodyText) : {};
+        const url = `${API_BASE_URL}${endpoint}`;
         
-        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+        const response = await fetch(url, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -96,12 +107,15 @@ async function testPUT() {
         displayResponse({
             status: response.status,
             statusText: response.statusText,
+            url: url,
             data: data
         });
     } catch (error) {
         displayResponse({
             error: error.message,
-            details: 'Invalid JSON in body or request failed'
+            details: 'Invalid JSON in body or request failed',
+            backendUrl: API_BASE_URL,
+            note: 'Make sure the backend server is running on ' + API_BASE_URL
         }, 'error');
     }
 }
