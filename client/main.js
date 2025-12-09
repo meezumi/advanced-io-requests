@@ -1,9 +1,10 @@
 // YOUR JAVASCRIPT CODE FOR INDEX.HTML GOES HERE
 
-// Backend API URL - When using catalyst serve, functions are served at /server/{function-name}/
-// For local development: http://localhost:3000/server/all_new_requests/
-// For production: https://your-domain.com/server/all_new_requests/
-const API_BASE_URL = 'http://localhost:3000/server/all_new_requests';
+// Backend API URL - Dynamically determined based on environment
+// In local development (catalyst serve): http://localhost:3000/server/all_new_requests/
+// In production (deployed): https://your-domain.com/server/all_new_requests/
+// The API base URL is constructed using the current origin to support both environments
+const API_BASE_URL = window.location.origin + '/server/all_new_requests';
 
 function displayResponse(data, status = 'success') {
     const responseBox = document.getElementById('response');
